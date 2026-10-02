@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Untuk Chika 🤍</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- BACKGROUND -->
+    <div class="background">
+        <div class="stars"></div>
+        <div class="moon"></div>
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+    </div>
+
+    <!-- MUSIK -->
+    <audio id="music" loop autoplay>
+        <source src="Assets/lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="musicButton" class="music-button">
+        🎵
+    </button>
+
+
+    <!-- HALAMAN 1 -->
+    <section class="page active" id="page1">
+
+        <div class="content">
+
+            <p class="subtitle">
+                A LITTLE GIFT FOR
+            </p>
+
+            <h1>Chika</h1>
+
+            <p class="description">
+                Ada sesuatu kecil yang ingin aku sampaikan
+                khusus untuk kamu. 🤍
+            </p>
+
+            <button class="main-button" onclick="nextPage()">
+                Buka hadiahnya 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 2 -->
+    <section class="page" id="page2">
+
+        <div class="content">
+
+            <p class="subtitle">
+                FOR YOU
+            </p>
+
+            <h2>Satu bunga untukmu 🌷</h2>
+
+            <div class="flower" onclick="flowerClick()">
+
+                <div class="petal p1"></div>
+                <div class="petal p2"></div>
+                <div class="petal p3"></div>
+                <div class="petal p4"></div>
+                <div class="petal p5"></div>
+                <div class="petal p6"></div>
+
+                <div class="flower-center"></div>
+
+            </div>
+
+            <p id="flowerText">
+                Klik bunganya 🌸
+            </p>
+
+            <button class="main-button" onclick="nextPage()">
+                Lanjut →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 3 FOTO -->
+    <section class="page" id="page3">
+
+        <div class="content">
+
+            <p class="subtitle">
+                OUR MEMORIES
+            </p>
+
+            <h2>Beberapa kenangan 🤍</h2>
+
+            <div class="photos">
+
+                <img
+                    src="Assets/Foto1.jpg"
+                    alt="Foto 1"
+                    onclick="openPhoto(this.src)"
+                >
+
+                <img
+                    src="Assets/Foto2.jpg"
+                    alt="Foto 2"
+                    onclick="openPhoto(this.src)"
+                >
+
+                <img
+                    src="Assets/foto3.jpg"
+                    alt="Foto 3"
+                    onclick="openPhoto(this.src)"
+                >
+
+            </div>
+
+            <p class="photo-info">
+                Klik salah satu foto untuk melihat lebih besar.
+            </p>
+
+            <button class="main-button" onclick="nextPage()">
+                Lanjut 🤍
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 4 -->
+    <section class="page" id="page4">
+
+        <div class="content">
+
+            <p class="subtitle">
+                A LETTER
+            </p>
+
+            <h2>Untuk Chika 💌</h2>
+
+            <div
+                class="envelope"
+                onclick="openLetter()"
+            >
+                💌
+            </div>
+
+            <p id="envelopeText">
+                Klik suratnya
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 5 -->
+    <section class="page" id="page5">
+
+        <div class="letter">
+
+            <h2>Untuk Chika 🤍</h2>
+
+            <p id="typing"></p>
+
+            <button
+                class="main-button"
+                onclick="nextPage()"
+            >
+                Lanjut →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 6 -->
+    <section class="page" id="page6">
+
+        <div class="content">
+
+            <p class="subtitle">
+                ONE MORE THING
+            </p>
+
+            <h2>Klik hati ini ❤️</h2>
+
+            <div
+                class="big-heart"
+                onclick="heartClick()"
+            >
+                ❤️
+            </div>
+
+            <p id="heartText">
+                ...
+            </p>
+
+            <button
+                class="main-button"
+                onclick="nextPage()"
+            >
+                Terakhir →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN 7 -->
+    <section class="page" id="page7">
+
+        <div class="content">
+
+            <p class="subtitle">
+                FOR CHIKA
+            </p>
+
+            <h1>Thank You 🤍</h1>
+
+            <p>
+                Terima kasih udah mau melihat
+                sampai akhir.
+            </p>
+
+            <br>
+
+            <button
+                class="main-button"
+                onclick="showFinal()"
+            >
+                🤍
+            </button>
+
+            <p id="finalText"></p>
+
+        </div>
+
+    </section>
+
+
+    <!-- LIGHTBOX FOTO -->
+    <div
+        class="lightbox"
+        id="lightbox"
+        onclick="closePhoto()"
+    >
+
+        <span class="close">
+            ×
+        </span>
+
+        <img
+            id="bigPhoto"
+            src=""
+            alt="Foto"
+        >
+
+    </div>
+
+
+    <!-- DOT NAVIGATION -->
+    <div class="dots">
+
+        <span class="dot active" onclick="goToPage(1)"></span>
+        <span class="dot" onclick="goToPage(2)"></span>
+        <span class="dot" onclick="goToPage(3)"></span>
+        <span class="dot" onclick="goToPage(4)"></span>
+        <span class="dot" onclick="goToPage(5)"></span>
+        <span class="dot" onclick="goToPage(6)"></span>
+        <span class="dot" onclick="goToPage(7)"></span>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
